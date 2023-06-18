@@ -60,7 +60,7 @@ api-ui: $(BIN)/oapi-codegen
 
 .PHONY: up
 up:
-	$(DOCKER_COMPOSE_INFRA_CMD) up -d redis postgres vault
+	$(DOCKER_COMPOSE_INFRA_CMD) up -d redis vault
 
 .PHONY: run
 run:

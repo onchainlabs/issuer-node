@@ -1,0 +1,5 @@
+vault/config
+vault/data
+vault/file
+vault/plugins
+vault.log
