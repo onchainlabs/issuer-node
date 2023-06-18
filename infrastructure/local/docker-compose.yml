@@ -21,7 +21,13 @@ services:
       - ../../.env-api
       - ../../.env-issuer
     command: sh -c "sleep 4s && ./migrate && ./platform"
-
+    logging:
+      driver: awslogs
+      options:
+        awslogs-region: ap-south-1
+        awslogs-group: issuer-node
+        awslogs-stream: api
+        awslogs-create-group: 'true'
   api-ui:
     build:
       context: ../../
@@ -50,6 +56,13 @@ services:
       - ../../.env-api
       - ../../.env-issuer
     command: sh -c "sleep 4s &&  ./pending_publisher"
+    logging:
+      driver: awslogs
+      options:
+        awslogs-region: ap-south-1
+        awslogs-group: issuer-node
+        awslogs-stream: pending-publisher
+        awslogs-create-group: 'true'
 
   initializer:
     build:

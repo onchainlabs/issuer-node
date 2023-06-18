@@ -1,6 +1,5 @@
 version: "3.9"
 services:
-  postgres:
   test_postgres:
     image: postgres:14-alpine
     environment:
